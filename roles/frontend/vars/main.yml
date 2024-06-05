@@ -1,2 +1,2 @@
 path: /usr/share/nginx/html
-backend_ip: {{ component }}-{{ env }}.azcart.online
+backend_ip: backend-{{ env }}.azcart.online
