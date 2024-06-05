@@ -10,7 +10,7 @@
 
 - name: To download {{ component }} content
   ansible.builtin.unarchive:
-    src: curl -o /tmp/frontend.zip https://expense-artifacts.s3.amazonaws.com/expense-{{ component }}-v2.zip
+    src: https://expense-artifacts.s3.amazonaws.com/expense-{{ component }}-v2.zip
     dest: "{{ path }}"
     remote_src: true
 
