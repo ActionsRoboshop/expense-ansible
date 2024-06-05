@@ -1,2 +1,3 @@
 path: /app
 mysql_ip: mysql-{{ env }}.azcart.online
+mysql_root_password: "ExpenseApp@1"
