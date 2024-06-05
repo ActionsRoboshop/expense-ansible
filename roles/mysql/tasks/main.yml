@@ -15,5 +15,5 @@
   # If .my.cnf already exists, this will cause an mysql-root-password update.
   mysql_user:
     name: root
-    password: "ExpenseApp@1"
+    password: "{{ mysql_root_ip }}"
     check_implicit_admin: true
