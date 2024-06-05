@@ -1,9 +1,15 @@
 - name: set-prompt for server
   ansible.builtin.shell: set-prompt {{ component }}-{{ env }}
 
+- name: To install nginx
+  ansible.builtin.dnf:
+    name: nginx
+    state: installed
+  when: component == 'frontend'
+
 - name: Calling tasks of app-preq-backend.yml file
   ansible.builtin.include_tasks:
-    file: app-preq-backend.yml
+    file: app-preq.yml
   when: component == 'backend'
 
 - name: Calling tasks of content-download.yml file
