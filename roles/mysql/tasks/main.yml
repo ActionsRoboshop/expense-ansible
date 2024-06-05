@@ -1,0 +1,17 @@
+- name: Install mysql server
+  ansible.builtin.dnf:
+    name: mysql-server
+    state: installed
+
+- name: Start mysql service
+  ansible.builtin.systemd_service:
+    name: mysqld
+    state: started
+    enabled: true
+
+- name: Set root user password
+  # If .my.cnf already exists, this will cause an mysql-root-password update.
+  mysql_user:
+    name: root
+    password: "ExpenseApp@1"
+    check_implicit_admin: true
