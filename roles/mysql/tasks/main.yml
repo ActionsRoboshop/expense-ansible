@@ -12,8 +12,4 @@
     enabled: true
 
 - name: Set root user password
-  # If .my.cnf already exists, this will cause an mysql-root-password update.
-  mysql_user:
-    name: root
-    password: "{{ mysql_root_ip }}"
-    check_implicit_admin: true
+  ansible.builtin.shell: mysql_secure_installation --set-root-pass {{ mysql_root_ip }}
