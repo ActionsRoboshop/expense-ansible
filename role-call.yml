@@ -1,0 +1,4 @@
+- name: To setup {{ component }}
+  become: true
+  roles:
+    - "{{ component }}"
