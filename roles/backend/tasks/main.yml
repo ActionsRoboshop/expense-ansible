@@ -1,0 +1,13 @@
+- name: copy service file
+  ansible.builtin.template:
+    src: backend.service
+    dest: /etc/systemd/system/backend.service
+
+- name: start backend service
+  ansible.builtin.systemd_service:
+    name: backend
+    state: started
+    daemon-reload: yes
+    enabled: yes
+
+

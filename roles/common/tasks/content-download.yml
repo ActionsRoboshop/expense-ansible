@@ -1,0 +1,21 @@
+- name: To remove old content
+  ansible.builtin.file:
+    name: "{{ path }}"
+    state: absent
+
+- name: To create app directory
+  ansible.builtin.file:
+    name: "{{ path }}"
+    state: directory
+
+- name: To download {{ component }} content
+  ansible.builtin.unarchive:
+    src: curl -o /tmp/frontend.zip https://expense-artifacts.s3.amazonaws.com/expense-{{ component }}-v2.zip
+    dest: "{{ path }}"
+    remote_src: true
+
+- name: To install nodejs dependencies
+  ansible.builtin.shell: npm install
+  args:
+    chdir: /app
+  when: component == 'backend'

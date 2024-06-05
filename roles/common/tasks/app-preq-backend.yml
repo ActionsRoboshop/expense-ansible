@@ -1,0 +1,15 @@
+- name: To disable default nodejs
+  ansible.builtin.shell: dnf module disable nodejs -y
+
+- name: To enable  nodejs:20
+  ansible.builtin.shell: dnf module enable nodejs:20 -y
+
+- name: Install nodejs
+  ansible.builtin.dnf:
+    name: nodejs
+    state: installed
+
+- name: Adding application user
+  ansible.builtin.user:
+    name: expense
+    state: present

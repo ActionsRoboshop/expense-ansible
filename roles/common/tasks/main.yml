@@ -1,0 +1,11 @@
+- name: set-prompt for server
+  ansible.builtin.shell: set-prompt {{ component }}-{{ env }}
+
+- name: Calling tasks of app-preq-backend.yml file
+  ansible.builtin.include_tasks:
+    file: app-preq-backend.yml
+  when: component == 'backend'
+
+- name: Calling tasks of content-download.yml file
+  ansible.builtin.include_tasks:
+    file: content-download.yml
