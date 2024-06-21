@@ -55,3 +55,5 @@ for component in ${project_component}
 do
   create_instance
 done
+
+rm -rf /tmp/route53_record.json
