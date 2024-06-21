@@ -6,7 +6,7 @@ if [ -z "${project_component}" ]; then
   echo "Variable is missing: project_component" && exit 1
 fi
 
-ami_id="ami-090252cbe067a9e58"
+ami_id="ami-031d574cddc5bb371"
 security_group_id="sg-0a88820d7b4d3ff2a"
 subnet_id="subnet-0b4d667be365dede4"
 
