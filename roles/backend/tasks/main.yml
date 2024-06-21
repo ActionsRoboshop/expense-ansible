@@ -11,7 +11,7 @@
 - name: To load schema
   ansible.builtin.shell: mysql -h {{ mysql_ip }}  -uroot -p{{mysql_root_password}} < /app/schema/backend.sql
 
-- name: start backend service
+- name: restarting backend service
   ansible.builtin.systemd_service:
     name: backend
     state: restarted
