@@ -3,6 +3,8 @@ Description = Backend Service
 
 [Service]
 User=expense
+WorkingDirectory=/app
+Environment=NEW_RELIC_APP_NAME=backend NEW_RELIC_LICENSE_KEY={{ NEW_RELIC_LICENSE_KEY }}
 Environment=DB_HOST="{{ mysql_ip }}"
 ExecStart=/bin/node /app/index.js
 SyslogIdentifier=backend

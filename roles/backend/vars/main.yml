@@ -1,3 +1,4 @@
 path: /app
 mysql_ip: mysql-{{ env }}.azcart.online
 mysql_root_password: "ExpenseApp@1"
+NEW_RELIC_LICENSE_KEY:  "{{ lookup('ansible.builtin.env', 'NEW_RELIC_LICENSE_KEY') }}"

@@ -8,6 +8,7 @@
     name: "{{ path }}"
     state: directory
 
+
 - name: To download {{ component }} content
   ansible.builtin.unarchive:
     src: https://expense-artifacts.s3.amazonaws.com/expense-{{ component }}-v2.zip
@@ -15,7 +16,9 @@
     remote_src: true
 
 - name: To install nodejs dependencies
-  ansible.builtin.shell: npm install
+  ansible.builtin.shell: | 
+     npm install newrelic --save # npm install
+     chown -R expense:expense /app
   args:
     chdir: /app
   when: component == 'backend'
