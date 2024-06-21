@@ -1,4 +1,4 @@
-#read -p "Enter component name:" project_component
+#read -p "Enter component name:" project_component #
 
 project_component=${server_name}
 
