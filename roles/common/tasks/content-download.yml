@@ -17,6 +17,7 @@
 
 - name: To install nodejs dependencies
   ansible.builtin.shell: | 
+     npm install
      npm install newrelic --save # npm install
      chown -R expense:expense /app
   args:
